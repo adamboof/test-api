@@ -18,7 +18,7 @@ api.use('/heartbeat/*', cors())
 api.post(
   '/heartbeat',
   async (c) => {
-    const post = await c.req.json()
+    const post = await c.req.parseBody()
     const ok = true
     console.log(post)  
     return c.json({ ok })
