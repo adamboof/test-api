@@ -20,6 +20,7 @@ api.post(
   async (c) => {
     const post = await c.req.json()
     const ok = true
+    console.log(post)  
     return c.json({ ok })
   }
 )
