@@ -2,8 +2,9 @@ import { Hono } from 'hono'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  console.log(c.req.json())
+app.get('/', async (c) => {
+  const body = await c.req.json()
+  console.log(body)
   return c.text('Hello Hono!')
 })
 
